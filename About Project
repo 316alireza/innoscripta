@@ -1,0 +1,256 @@
+This project is made to gather articles from news agencies.
+Firstly I do apologise for the time limitation and filtering problems in Iran
+I could just connect to Guardian.
+
+After getting the project :
+1- run php artisan app:guardian-articles to feed database from Guardian APIs.
+
+2- Backend example request:
+    method : GET
+    curl --location '{YOUR-SERVER-IP}/api/articles?category=Football&resource=Guardian&fromDate=2023-11-27&toDate=2023-11-25&q=Dancing'
+
+3- Response example:
+    {
+        "data": [
+            {
+                "id": 1,
+                "source": "Guardian",
+                "source_id": "tv-and-radio/live/2023/nov/25/strictly-come-dancing-week-ten-live",
+                "section": "Television & radio",
+                "published_at": "2023-11-26 20:14:06",
+                "title": "Strictly Come Dancing: week 10 results – live",
+                "web_url": "https://www.theguardian.com/tv-and-radio/live/2023/nov/25/strictly-come-dancing-week-ten-live",
+                "api_url": "https://content.guardianapis.com/tv-and-radio/live/2023/nov/25/strictly-come-dancing-week-ten-live"
+            },
+            {
+                "id": 2,
+                "source": "Guardian",
+                "source_id": "world/2023/nov/26/israeli-foreign-minister-accuses-irish-taoiseach-of-legitimising-terror-over-hostage-statement",
+                "section": "World news",
+                "published_at": "2023-11-26 20:08:32",
+                "title": "Israeli foreign minister accuses Irish taoiseach of legitimising terror over hostage statement",
+                "web_url": "https://www.theguardian.com/world/2023/nov/26/israeli-foreign-minister-accuses-irish-taoiseach-of-legitimising-terror-over-hostage-statement",
+                "api_url": "https://content.guardianapis.com/world/2023/nov/26/israeli-foreign-minister-accuses-irish-taoiseach-of-legitimising-terror-over-hostage-statement"
+            },
+            {
+                "id": 3,
+                "source": "Guardian",
+                "source_id": "world/live/2023/nov/26/israel-hamas-war-live-hostages-ceasefire-gaza-palestinian-prisoners-truce",
+                "section": "World news",
+                "published_at": "2023-11-26 20:04:43",
+                "title": "Israel-Hamas war live: Israel releases Palestinians from prison after Hamas frees 17 hostages – officials",
+                "web_url": "https://www.theguardian.com/world/live/2023/nov/26/israel-hamas-war-live-hostages-ceasefire-gaza-palestinian-prisoners-truce",
+                "api_url": "https://content.guardianapis.com/world/live/2023/nov/26/israel-hamas-war-live-hostages-ceasefire-gaza-palestinian-prisoners-truce"
+            },
+            {
+                "id": 4,
+                "source": "Guardian",
+                "source_id": "world/2023/nov/26/overjoyed-nine-year-old-hostage-emily-hand-returns-to-family-in-israel",
+                "section": "World news",
+                "published_at": "2023-11-26 19:54:13",
+                "title": "‘Overjoyed’: nine-year-old hostage Emily Hand returns to family in Israel",
+                "web_url": "https://www.theguardian.com/world/2023/nov/26/overjoyed-nine-year-old-hostage-emily-hand-returns-to-family-in-israel",
+                "api_url": "https://content.guardianapis.com/world/2023/nov/26/overjoyed-nine-year-old-hostage-emily-hand-returns-to-family-in-israel"
+            },
+            {
+                "id": 5,
+                "source": "Guardian",
+                "source_id": "football/2023/nov/26/terry-venables-the-coach-who-saved-english-football-from-insularity",
+                "section": "Football",
+                "published_at": "2023-11-26 19:48:38",
+                "title": "Terry Venables, the coach who saved English football from insularity",
+                "web_url": "https://www.theguardian.com/football/2023/nov/26/terry-venables-the-coach-who-saved-english-football-from-insularity",
+                "api_url": "https://content.guardianapis.com/football/2023/nov/26/terry-venables-the-coach-who-saved-english-football-from-insularity"
+            },
+            {
+                "id": 6,
+                "source": "Guardian",
+                "source_id": "us-news/2023/nov/26/palestinian-students-shot-wounded-vermont",
+                "section": "US news",
+                "published_at": "2023-11-26 19:44:39",
+                "title": "Three Palestinian students shot and wounded in Vermont, police say",
+                "web_url": "https://www.theguardian.com/us-news/2023/nov/26/palestinian-students-shot-wounded-vermont",
+                "api_url": "https://content.guardianapis.com/us-news/2023/nov/26/palestinian-students-shot-wounded-vermont"
+            },
+            {
+                "id": 7,
+                "source": "Guardian",
+                "source_id": "australia-news/2023/nov/27/morning-mail-distress-over-tax-debt-letters-whistleblowers-motives-revealed-hamas-hostages-released",
+                "section": "Australia news",
+                "published_at": "2023-11-26 19:39:39",
+                "title": "Morning Mail: distress over tax debt letters; whistleblower’s motives revealed; Hamas hostages released",
+                "web_url": "https://www.theguardian.com/australia-news/2023/nov/27/morning-mail-distress-over-tax-debt-letters-whistleblowers-motives-revealed-hamas-hostages-released",
+                "api_url": "https://content.guardianapis.com/australia-news/2023/nov/27/morning-mail-distress-over-tax-debt-letters-whistleblowers-motives-revealed-hamas-hostages-released"
+            },
+            {
+                "id": 8,
+                "source": "Guardian",
+                "source_id": "football/blog/2023/nov/26/boos-cant-lift-blues-but-everton-fans-spirit-of-defiance-can-rouse-team",
+                "section": "Football",
+                "published_at": "2023-11-26 19:37:36",
+                "title": "Boos can’t lift blues but Everton fans’ spirit of defiance can rouse team | Jonathan Wilson",
+                "web_url": "https://www.theguardian.com/football/blog/2023/nov/26/boos-cant-lift-blues-but-everton-fans-spirit-of-defiance-can-rouse-team",
+                "api_url": "https://content.guardianapis.com/football/blog/2023/nov/26/boos-cant-lift-blues-but-everton-fans-spirit-of-defiance-can-rouse-team"
+            },
+            {
+                "id": 9,
+                "source": "Guardian",
+                "source_id": "uk-news/2023/nov/26/labour-would-cut-net-migration-shadow-minister-darren-jones",
+                "section": "UK news",
+                "published_at": "2023-11-26 19:27:57",
+                "title": "Labour would cut net migration to 200,000 a year, says shadow minister",
+                "web_url": "https://www.theguardian.com/uk-news/2023/nov/26/labour-would-cut-net-migration-shadow-minister-darren-jones",
+                "api_url": "https://content.guardianapis.com/uk-news/2023/nov/26/labour-would-cut-net-migration-shadow-minister-darren-jones"
+            },
+            {
+                "id": 10,
+                "source": "Guardian",
+                "source_id": "football/live/2023/nov/26/everton-v-manchester-united-premier-league-live-score-updates",
+                "section": "Football",
+                "published_at": "2023-11-26 19:21:37",
+                "title": "Everton 0-3 Manchester United: Premier League – as it happened",
+                "web_url": "https://www.theguardian.com/football/live/2023/nov/26/everton-v-manchester-united-premier-league-live-score-updates",
+                "api_url": "https://content.guardianapis.com/football/live/2023/nov/26/everton-v-manchester-united-premier-league-live-score-updates"
+            },
+            {
+                "id": 11,
+                "source": "Guardian",
+                "source_id": "business/nils-pratley-on-finance/2023/nov/27/uk-global-investment-summit-rishi-sunak",
+                "section": "Business",
+                "published_at": "2023-11-27 18:45:21",
+                "title": "UK’s Global Investment Summit is very nice – but the £29.5bn figure is pure hype | Nils Pratley",
+                "web_url": "https://www.theguardian.com/business/nils-pratley-on-finance/2023/nov/27/uk-global-investment-summit-rishi-sunak",
+                "api_url": "https://content.guardianapis.com/business/nils-pratley-on-finance/2023/nov/27/uk-global-investment-summit-rishi-sunak"
+            },
+            {
+                "id": 12,
+                "source": "Guardian",
+                "source_id": "business/2023/nov/27/sunak-woos-business-elite-with-royal-welcome-but-they-seek-certainty",
+                "section": "Business",
+                "published_at": "2023-11-27 18:42:17",
+                "title": "Sunak woos business elite with royal welcome – but they seek certainty ",
+                "web_url": "https://www.theguardian.com/business/2023/nov/27/sunak-woos-business-elite-with-royal-welcome-but-they-seek-certainty",
+                "api_url": "https://content.guardianapis.com/business/2023/nov/27/sunak-woos-business-elite-with-royal-welcome-but-they-seek-certainty"
+            },
+            {
+                "id": 13,
+                "source": "Guardian",
+                "source_id": "uk-news/2023/nov/27/tory-mps-pressure-sunak-to-take-urgent-action-on-migration",
+                "section": "UK news",
+                "published_at": "2023-11-27 18:42:15",
+                "title": "Tory MPs pressure Sunak to take ‘urgent action’ on migration",
+                "web_url": "https://www.theguardian.com/uk-news/2023/nov/27/tory-mps-pressure-sunak-to-take-urgent-action-on-migration",
+                "api_url": "https://content.guardianapis.com/uk-news/2023/nov/27/tory-mps-pressure-sunak-to-take-urgent-action-on-migration"
+            },
+            {
+                "id": 14,
+                "source": "Guardian",
+                "source_id": "us-news/live/2023/nov/27/george-santos-expulsion-vote-republicans-biden-aid-israel-ukraine-latest-updates",
+                "section": "US news",
+                "published_at": "2023-11-27 18:31:06",
+                "title": "Joe Biden and first lady ‘horrified’ by Vermont shooting of three Palestinian students – live updates",
+                "web_url": "https://www.theguardian.com/us-news/live/2023/nov/27/george-santos-expulsion-vote-republicans-biden-aid-israel-ukraine-latest-updates",
+                "api_url": "https://content.guardianapis.com/us-news/live/2023/nov/27/george-santos-expulsion-vote-republicans-biden-aid-israel-ukraine-latest-updates"
+            },
+            {
+                "id": 15,
+                "source": "Guardian",
+                "source_id": "world/2023/nov/27/i-dont-know-if-shes-dead-or-alive-hostage-swap-leaves-palestinian-girls-family-in-limbo",
+                "section": "World news",
+                "published_at": "2023-11-27 18:16:40",
+                "title": "‘I don’t know if she’s dead or alive’: hostage swap leaves Palestinian girl’s family in limbo",
+                "web_url": "https://www.theguardian.com/world/2023/nov/27/i-dont-know-if-shes-dead-or-alive-hostage-swap-leaves-palestinian-girls-family-in-limbo",
+                "api_url": "https://content.guardianapis.com/world/2023/nov/27/i-dont-know-if-shes-dead-or-alive-hostage-swap-leaves-palestinian-girls-family-in-limbo"
+            },
+            {
+                "id": 16,
+                "source": "Guardian",
+                "source_id": "uk-news/2023/nov/27/brianna-ghey-trial-accused-discussed-killing-five-children-court-told",
+                "section": "UK news",
+                "published_at": "2023-11-27 17:49:02",
+                "title": "Brianna Ghey murder trial: accused discussed killing five children, court told",
+                "web_url": "https://www.theguardian.com/uk-news/2023/nov/27/brianna-ghey-trial-accused-discussed-killing-five-children-court-told",
+                "api_url": "https://content.guardianapis.com/uk-news/2023/nov/27/brianna-ghey-trial-accused-discussed-killing-five-children-court-told"
+            },
+            {
+                "id": 17,
+                "source": "Guardian",
+                "source_id": "society/2023/nov/27/stalking-victims-face-postcode-lottery-coroner-gracie-spinks-killing",
+                "section": "Society",
+                "published_at": "2023-11-27 17:42:08",
+                "title": "Stalking victims face ‘postcode lottery’, says coroner after Gracie Spinks killing",
+                "web_url": "https://www.theguardian.com/society/2023/nov/27/stalking-victims-face-postcode-lottery-coroner-gracie-spinks-killing",
+                "api_url": "https://content.guardianapis.com/society/2023/nov/27/stalking-victims-face-postcode-lottery-coroner-gracie-spinks-killing"
+            },
+            {
+                "id": 18,
+                "source": "Guardian",
+                "source_id": "technology/2023/nov/27/tesla-suing-swedens-transport-agency-in-escalation-of-strike-row-licence-plates",
+                "section": "Technology",
+                "published_at": "2023-11-27 17:39:41",
+                "title": "Tesla sues Sweden’s transport agency in escalation of strike row",
+                "web_url": "https://www.theguardian.com/technology/2023/nov/27/tesla-suing-swedens-transport-agency-in-escalation-of-strike-row-licence-plates",
+                "api_url": "https://content.guardianapis.com/technology/2023/nov/27/tesla-suing-swedens-transport-agency-in-escalation-of-strike-row-licence-plates"
+            },
+            {
+                "id": 19,
+                "source": "Guardian",
+                "source_id": "us-news/2023/nov/27/liz-truss-republican-president-election-2024",
+                "section": "US news",
+                "published_at": "2023-11-27 17:35:44",
+                "title": "Liz Truss backs Trump with call for Republican presidential victory",
+                "web_url": "https://www.theguardian.com/us-news/2023/nov/27/liz-truss-republican-president-election-2024",
+                "api_url": "https://content.guardianapis.com/us-news/2023/nov/27/liz-truss-republican-president-election-2024"
+            },
+            {
+                "id": 20,
+                "source": "Guardian",
+                "source_id": "artanddesign/2023/nov/27/david-panos-gothic-revival-review-nn-contemporary-art-northampton",
+                "section": "Art and design",
+                "published_at": "2023-11-27 17:31:44",
+                "title": "David Panos: Gothic Revival review – a restless walk on the dark side of … Northampton? ",
+                "web_url": "https://www.theguardian.com/artanddesign/2023/nov/27/david-panos-gothic-revival-review-nn-contemporary-art-northampton",
+                "api_url": "https://content.guardianapis.com/artanddesign/2023/nov/27/david-panos-gothic-revival-review-nn-contemporary-art-northampton"
+            },
+            {
+                "id": 21,
+                "source": "Guardian",
+                "source_id": "football/live/2023/nov/27/fulham-v-wolves-premier-league-live",
+                "section": "Football",
+                "published_at": "2023-11-27 19:07:32",
+                "title": "Fulham v Wolves: Premier League – live",
+                "web_url": "https://www.theguardian.com/football/live/2023/nov/27/fulham-v-wolves-premier-league-live",
+                "api_url": "https://content.guardianapis.com/football/live/2023/nov/27/fulham-v-wolves-premier-league-live"
+            },
+            {
+                "id": 22,
+                "source": "Guardian",
+                "source_id": "environment/2023/nov/27/revealed-saudi-arabia-plan-poor-countries-oil",
+                "section": "Environment",
+                "published_at": "2023-11-27 19:00:38",
+                "title": "Revealed: Saudi Arabia’s grand plan to ‘hook’ poor countries on oil",
+                "web_url": "https://www.theguardian.com/environment/2023/nov/27/revealed-saudi-arabia-plan-poor-countries-oil",
+                "api_url": "https://content.guardianapis.com/environment/2023/nov/27/revealed-saudi-arabia-plan-poor-countries-oil"
+            },
+            {
+                "id": 23,
+                "source": "Guardian",
+                "source_id": "commentisfree/2023/nov/27/the-guardian-view-on-king-charles-and-the-duchy-of-lancaster-feudalism-reigns-in-the-north-west",
+                "section": "Opinion",
+                "published_at": "2023-11-27 18:56:01",
+                "title": "The Guardian view on King Charles and the Duchy of Lancaster: feudalism reigns in the north-west | Editorial",
+                "web_url": "https://www.theguardian.com/commentisfree/2023/nov/27/the-guardian-view-on-king-charles-and-the-duchy-of-lancaster-feudalism-reigns-in-the-north-west",
+                "api_url": "https://content.guardianapis.com/commentisfree/2023/nov/27/the-guardian-view-on-king-charles-and-the-duchy-of-lancaster-feudalism-reigns-in-the-north-west"
+            },
+            {
+                "id": 24,
+                "source": "Guardian",
+                "source_id": "politics/2023/nov/27/let-off-lightly-on-migration-cleverly-is-brought-back-for-a-sorry-farce",
+                "section": "Politics",
+                "published_at": "2023-11-27 18:54:20",
+                "title": "Let off lightly on migration, Cleverly is brought back for a sorry farce | John Crace",
+                "web_url": "https://www.theguardian.com/politics/2023/nov/27/let-off-lightly-on-migration-cleverly-is-brought-back-for-a-sorry-farce",
+                "api_url": "https://content.guardianapis.com/politics/2023/nov/27/let-off-lightly-on-migration-cleverly-is-brought-back-for-a-sorry-farce"
+            }
+        ]
+    }
